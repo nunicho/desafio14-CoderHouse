@@ -1,0 +1,113 @@
+[
+     {
+          "id": 1,
+          "status": true,
+          "title": "Taladro Atornillador MAX",
+          "description": "Percutor 13mm 700w +45",
+          "price": 18973,
+          "thumbnail": "https://http2.mlstatic.com/D_Q_NP_696031-MLA53229149793_012023-AC.webp",
+          "code": "TA-3",
+          "stock": 15
+     },
+     {
+          "id": 2,
+          "status": true,
+          "title": "Bomba de agua Bestway",
+          "description": "Para pileta de 8300 litros",
+          "price": 15300,
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_834375-MLA53124664257_012023-F.webp",
+          "code": "TA-2",
+          "stock": 8
+     },
+     {
+          "id": 3,
+          "status": true,
+          "title": "Tender para la ropa",
+          "description": "Pie aluminio plegable",
+          "price": 21000,
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_685663-MLU69658396260_052023-O.webp",
+          "code": "TA-1",
+          "stock": 9
+     },
+     {
+          "id": 4,
+          "status": true,
+          "title": "Set de destornilladores",
+          "description": "Philips recto y demás",
+          "price": 15000,
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_966319-MLA44072933854_112020-F.webp",
+          "code": "TA-190",
+          "stock": 8
+     },
+     {
+          "id": 5,
+          "status": true,
+          "title": "Disco abrasivo Flap",
+          "description": "115mm Grano 40/60/80/100",
+          "price": 6299,
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_669888-MLA70195215401_062023-F.webp",
+          "code": "TA-250",
+          "stock": 7
+     },
+     {
+          "id": 6,
+          "status": true,
+          "title": "Sella Roscas Hidro 5",
+          "description": "55cc Sella Caños Agua Verde",
+          "price": 1850,
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_758483-MLA47006749310_082021-V.webp",
+          "code": "TA-1800",
+          "stock": 10
+     },
+     {
+          "id": 15,
+          "status": true,
+          "title": "Bicicleta",
+          "description": "es de niño",
+          "price": "75000",
+          "thumbnail": "https://www.heavenimagenes.com/heavencommerce/68ac9d04-8767-4aca-9951-49f2fea1383b/images/v2/SLP/27854_medium.jpg",
+          "code": "TG-20",
+          "stock": "40"
+     },
+     {
+          "id": 17,
+          "status": true,
+          "title": "Cadena",
+          "description": "es de acero",
+          "price": "14000",
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_993887-MLA27295441179_052018-F.webp",
+          "code": "TA-1810",
+          "stock": "12"
+     },
+     {
+          "id": 18,
+          "status": true,
+          "title": "Morsa de banco giratoria",
+          "description": "Yunque 3 pulgadas",
+          "price": "27000",
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_752192-MLA44221553314_122020-F.webp",
+          "code": "tx-56",
+          "stock": "1"
+     },
+     {
+          "id": 19,
+          "status": true,
+          "title": "Pico Albañil",
+          "description": "76mm con cabo",
+          "price": "19000",
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_905796-MLA51314544240_082022-F.webp",
+          "code": "tx-57",
+          "stock": "2"
+     },
+     {
+          "id": 20,
+          "status": true,
+          "title": "Caja de clavos",
+          "description": "Cabeza Chata 2x30mm X 100unds",
+          "price": "2000",
+          "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_870025-MLA54760059794_032023-F.webp",
+          "code": "TB-546",
+          "stock": "3"
+     }
+   
+]

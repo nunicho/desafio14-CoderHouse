@@ -1,0 +1,41 @@
+<!-- Ventana modal para EDITAR PRODUCTO -->
+<div id="modal" class="modal">
+  <div class="modal-scrollable-content">
+    <span class="close" id="cerrarModal">&times;</span>
+    <h2>Editar Producto</h2>
+   <form id="editProductForm" action="/editarProducto/{{ productoDB._id }}" method="POST">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" value="{{ productoDB.title }}" required />
+
+      <label for="description">Descripción:</label>
+      <input id="description" name="description" value="{{ productoDB.description }}" required></input>
+
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" step="0.01" value="{{ productoDB.price }}" required />
+
+      <label for="thumbnail">URL de la Imagen:</label>
+      <input type="url" id="thumbnail" name="thumbnail" value="{{ productoDB.thumbnail }}" required />
+
+      <label for="code">Código:</label>
+      <input type="text" id="code" name="code" value="{{ productoDB.code }}" required />
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" value="{{ productoDB.stock }}" required />
+      
+      <button type="submit" onclick="submitForm()">Guardar Cambios</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function submitForm() {
+    const form = document.getElementById('editProductForm');
+    form.method = 'POST'; // Cambia el método del formulario a POST
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = '_method';
+    hiddenInput.value = 'PUT';
+    form.appendChild(hiddenInput);
+    form.submit();
+  }
+</script>

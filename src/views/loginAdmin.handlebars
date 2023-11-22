@@ -1,0 +1,18 @@
+<h2>Login de administrador: </h2>
+
+<hr>
+
+<form action="/api/sessions/loginAdmin" method="POST">
+
+    {{#if error}}
+            <div class="error">{{errorDetalle}}</div>
+     {{/if}}   
+
+    <input type="email" name="email" placeholder="email">   
+    <input type="password" name="password" placeholder="password">  
+    <input type="submit" value="Login">
+</form>
+
+<br>
+
+<a href="/">Login como Usuario</a>

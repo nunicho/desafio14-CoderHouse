@@ -1,0 +1,33 @@
+<span><a  href="/">Regresar</a></span> <span><button id="printButton">Imprimir Producto</button></span>
+<br/>
+<h1>{{titlePage}}</h1>
+
+{{#unless isFirst}}
+  <a style="margin: 15px" href="/fsproducts?index={{subtract index 1}}">Anterior</a>
+{{/unless}}
+{{#unless isLast}}
+  <a style="margin: 15px"  href="/fsproducts?index={{add index 1}}">Siguiente</a>
+{{/unless}}
+
+<hr />
+
+<h3>{{product.title}}</h3>
+<ul>
+  <li><strong>Descripción:</strong>{{product.description}}</li>
+  <li><strong>Precio: </strong> {{product.price}}</li>
+  <li><strong>Código: </strong> {{product.code}}</li>
+   <li><strong>Stock:  </strong>{{product.stock}} unidades</li>
+</ul>
+
+<img
+  src="{{product.thumbnail}}"
+  height="auto"
+  width="300"
+  title="{{product.title}}"
+  style="border: 2px solid red; margin: 10px;"
+  alt="Descripción de la imagen"
+  loading="lazy"
+/>
+
+
+ <script type="module" src="assets/scripts/print.js"></script> 

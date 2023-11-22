@@ -1,0 +1,49 @@
+<span><a  href="/">Regresar</a></span> <span><button id="printButton">Imprimir Lista</button></span>
+
+<span></span>
+<h2>{{titlePage}}</h2>
+<hr />
+
+
+<!-- Botón para mostrar la ventana modal del formulario de AGREGAR PRODUCTO -->
+<button id="agregarProducto">Agregar Producto</button>
+
+<!-- Ventana modal para AGREGAR PRODUCTOS -->
+<div id="modal" class="modal">
+  <div class="modal-scrollable-content">
+    <span class="close" id="cerrarModal">&times;</span>
+    <h2>Ingresar Producto</h2>
+    <form id="productForm" action="/api/products" method="POST">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="description">Descripción:</label>
+      <input id="description" name="description" required></input>
+
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" step="0.01" required />
+
+      <label for="thumbnail">URL de la Imagen:</label>
+      <input type="url" id="thumbnail" name="thumbnail" required />
+
+      <label for="code">Código:</label>
+      <input type="text" id="code" name="code" required />
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required />
+      <button type="submit">Agregar Producto</button>
+    </form>
+  </div>
+</div>
+
+<hr />
+
+<div>
+  <ul id="realTimeProductsList"></ul>
+</div>
+
+<script src="socket.io/socket.io.js"></script>
+<script src="assets/scripts/home.js"></script>
+<script src="assets/scripts/modalAddProduct.js"></script>
+<script type="module" src="assets/scripts/print.js"></script> 
+

@@ -1,0 +1,12 @@
+<h2>Perfil de {{usuario.nombre}}</h2>
+<hr>
+<p>Nombre: <strong>{{usuario.nombre}}</strong></p>
+<p>Correo electrónico: <strong>{{usuario.email}}</strong></p>
+<p>ROL: <strong>{{usuario.role}}</strong></p>
+
+{{#if usuario.github._json.avatar_url}}
+  <img src="{{usuario.github._json.avatar_url}}" alt="Foto de perfil de GitHub">
+{{/if}}
+
+<br>
+{{>menu}}

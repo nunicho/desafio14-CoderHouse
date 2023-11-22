@@ -1,0 +1,38 @@
+<body>
+
+<h1>Detalles del Carrito</h1>
+
+{{#if carritoDB}}
+  <h2 class="prueba">ID del Carrito: {{carritoDB._id}}</h2>
+  <ul>
+    {{#each carritoDB.productos}}
+
+        <h2>{{this.producto.title}}</h2>
+     <li>
+        Descripción:
+        <strong>{{this.producto.description}}</strong> 
+     </li>
+        <li>
+        Precio:
+        <strong>{{this.producto.price}}</strong> 
+     </li>
+        <li>
+        Imagen:
+        <img src="{{this.producto.thumbnail}}"></img> 
+     </li>
+        <li>
+        Code:
+        <strong>{{this.producto.code}}</strong> 
+     </li>
+        <li>
+        Stock:
+        <strong>{{this.producto.stock}}</strong> 
+     </li>
+        <h3> Cantidad: {{this.cantidad}} </h3>      
+    {{/each}}
+  </ul>
+{{else}}
+  <p>El carrito no existe o está vacío.</p>
+{{/if}}
+</body>
+

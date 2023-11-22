@@ -1,0 +1,26 @@
+
+<h2>CONTROL DE AUTENTICACIÓN</h2>
+
+{{#if usuario}}
+  <div>Está logueado el usuario:</div>
+  {{usuario.email}}
+<div>Su rol es:</div>
+{{usuario.role}}
+{{else}}
+  <div>No hay usuario autenticado</div>
+{{/if}}
+
+<br>
+{{>menu}}
+
+
+{{!-- <h2>CONTROL DE AUTENTICACION</h2>
+
+{{#if usuario}}
+  <div>Está logueado el usuario: {{usuario.email}}</div>
+{{else}}
+  <div>No hay usuario autenticado</div>
+{{/if}}
+
+<br>
+{{>menu}} --}}

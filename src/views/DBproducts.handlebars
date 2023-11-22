@@ -1,0 +1,117 @@
+<span><a  href="/">Regresar</a></span> <span><button id="printButton">Imprimir Lista</button></span>
+<br/>
+
+<div id="carritoContainer">
+  <h2>Carrito de Compras</h2>
+  <div id="carritoProductos">
+    <!-- Los productos seleccionados se agregarán aquí -->
+  </div>
+  <div id="totalCarrito">Total: $0.00</div> <!-- Contenedor para mostrar el total -->
+  <button id="limpiarCarrito">Limpiar Carrito</button>
+  <button id="finalizarCompra">Finalizar Compra</button>
+</div>
+
+<h1>Lista de productos en Base de Datos</h1>
+
+<form action="/DBproducts" method="GET" id="filtroForm">
+  <label for="filtro">Filtrar por nombre:</label>
+  <input type="text" id="filtro" name="filtro" value="{{filtro}}" /> <!-- Establece el valor del filtro -->
+  <label for="codeFilter">Filtrar por código:</label>
+  <input type="text" id="codeFilter" name="codeFilter" value="{{codeFilter}}" /> <!-- Establece el valor del filtro de código -->
+  
+  
+    <label for="sort">Ordenar por:</label>
+  <select id="sort" name="sort">
+    <option value="">Sin orden</option>
+    <option value="price_asc">Precio ascendente</option>
+    <option value="price_desc">Precio descendente</option>
+  </select>
+
+    <label for="limit">Número de Elementos a Mostrar:</label>
+  <input type="number" id="limit" name="limit" value="{{limit}}" />
+  
+  <button type="submit">Filtrar</button>
+  <button type="button" id="limpiarFiltros">Limpiar</button> <!-- Botón para limpiar el formulario -->
+</form>
+
+<div>
+  <ul id="DBProductsList"></ul>
+</div>
+
+{{#if hasProducts}}
+ <div class="grid">
+        {{#each productos }}
+        <article class="card product-item">
+             <header class="card__header">
+                <h2 class="product__title">{{ this.title}}</h2>
+            </header>
+            <div class="card__image">
+                <img class="dbimg"src={{this.thumbnail}}
+                    alt="{{this.title}}">
+            </div>
+            <div>
+                <h3>${{this.price}}</h3>
+            </div>
+        </article> 
+        <a href="DBProducts/{{ this._id }}">Más detalles</a>        
+        <a href="#" data-product-id="{{ this._id }}" data-product-name="{{ this.title }}" data-product-price="{{ this.price }}">Agregar al Carrito</a>
+        {{/each }}
+    {{else}}
+    <h1> ¡No se encontraron productos! </h1>
+    {{/if}}
+<br>
+  <a href="/DBProducts?pagina=1">Pág. 1</a>
+
+  {{#if hasPrevPage}}
+      <a href="/DBProducts?pagina={{prevPage}}">Prev. Pág</a>
+  {{else}}
+  <span>Prev. Pág.</span>
+  {{/if}}
+
+  {{#if hasNextPage}}
+      <a href="/DBProducts?pagina={{nextPage}}">Next. Pág</a>
+  {{else}}
+  <span>Next. Pág.</span>
+  {{/if}}
+
+    <a href="/DBProducts?pagina={{totalPages}}">Ult. página</a>
+ </div> 
+
+<!-- Ventana modal para AGREGAR PRODUCTOS -->
+<div id="modal" class="modal">
+  <div class="modal-scrollable-content">
+    <span class="close" id="cerrarModal">&times;</span>
+    <h2>Ingresar Producto</h2>
+    <form id="productForm" action="/DBProducts" method="POST">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="description">Descripción:</label>
+      <input id="description" name="description" required></input>
+
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" step="0.01" required />
+
+      <label for="thumbnail">URL de la Imagen:</label>
+      <input type="url" id="thumbnail" name="thumbnail" required />
+
+      <label for="code">Código:</label>
+      <input type="text" id="code" name="code" required />
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required />
+      <button type="submit">Agregar Producto</button>
+    </form>
+  </div>
+</div>
+
+
+<script src="assets/scripts/modalAddProduct.js"></script>
+<script type="module" src="assets/scripts/deleteProduct.js"></script> 
+<script type="module" src="assets/scripts/print.js"></script> 
+<script type="module" src="assets/scripts/dbProductsfilter.js"></script> 
+<script type="module" src="assets/scripts/addToCart.js"></script> 
+
+
+
+

@@ -1,0 +1,72 @@
+<body>
+    
+    {{#ifEquals usuario.role 'administrador'}}
+            <h2>Bienvenido, ADMINISTRADOR {{usuario.nombre}}!</h2>
+    {{/ifEquals}}
+    {{#ifEquals usuario.role 'user'}}
+        <h2>Bienvenido, Usuario {{usuario.nombre}}!</h2>
+    {{/ifEquals}}
+    
+
+    <h2>{{titlePage}}</h2>
+    <hr>  
+    <br>
+    {{>menu}}
+
+    {{#ifEquals usuario.role 'administrador'}}
+        <div>
+            <a href="/DBproducts-Admin">Productos</a>
+        </div>
+    {{/ifEquals}}
+    {{#ifEquals usuario.role 'user'}}
+        <div>
+             <a href="/DBproducts">Productos</a>
+        </div>
+        <div>
+              <a href="/chat">Chat- Con Handlebars</a>
+        </div>
+    {{/ifEquals}}
+
+
+  <label for="cartId">ID del Carrito:</label>
+    <input type="text" id="cartId" placeholder="Ingrese el ID del carrito" oninput="toggleSubmitButton(); updateCartLink();">
+    <button onclick="verDetalleCart();" disabled>Explorar Carrito</button>
+
+    <script>
+        function toggleSubmitButton() {
+            const cartIdInput = document.getElementById("cartId");
+            const verDetalleButton = document.querySelector("button");
+
+            if (cartIdInput.value.trim() === "") {
+                verDetalleButton.disabled = true;
+            } else {
+                verDetalleButton.disabled = false;
+            }
+        }
+
+        function updateCartLink() {
+            const cartIdInput = document.getElementById("cartId");
+            const cartLink = document.getElementById("cartLink");
+
+            const cartId = cartIdInput.value.trim();
+
+            if (cartId === "") {
+                // Si el input está vacío, el enlace apunta a "/carts"
+                cartLink.href = "/carts";
+            } else {
+                // Si hay un valor en el input, actualiza el href directamente
+                cartLink.href = `/carts/${cartId}`;
+            }
+        }
+
+        function verDetalleCart() {
+            const cartIdInput = document.getElementById("cartId");
+            const cartId = cartIdInput.value.trim();
+
+            if (cartId !== "") {
+                // Si hay un valor en el input, redirige al usuario a la URL correspondiente
+                window.location.href = `/carts/${cartId}`;
+            }
+        }
+    </script>
+</body>
