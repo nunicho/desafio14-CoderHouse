@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const fs = require("fs");
 const http = require("http");
@@ -6,15 +8,14 @@ const MessageModel = require("./dao/DB/models/messages.modelo.js");
 
 const moongose = require("mongoose");
 const path = require("path");
-const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser");
 
 //MANEJO DE ERRORES
 const errorHandler = require("./middleware/errorHandler.js");
 
-// DOTENV 
-const config = require("./config/config.js")
+// DOTENV
+const config = require("./config/config.js");
 //console.log(config.DB_NAME)
-
 
 //SESSION
 const session = require("express-session");
@@ -22,22 +23,23 @@ const ConnectMongo = require("connect-mongo");
 
 //PASSPORT
 
-const inicializaPassport = require("./config/passport.config.js")
-const passport = require("passport")
+const inicializaPassport = require("./config/passport.config.js");
+const passport = require("passport");
 
 // HANDLEBARS - importación
 const handlebars = require("express-handlebars");
 
 const PORT = config.PORT;
 
-
-
 const app = express();
+
+// LOGGER
+const { middlog } = require("./util.js");
+app.use(middlog);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
 
 //PARA SESSION Y LOGIN
 
@@ -52,19 +54,18 @@ app.use(
     secret: config.SESSIONS_PASSWORD,
     resave: true,
     saveUninitialized: true,
-    store: sessionStore
+    store: sessionStore,
   })
 );
 
 //PARA INICIAR PASSPORT
 
-inicializaPassport()
-app.use(passport.initialize())
-app.use(passport.session())
-
+inicializaPassport();
+app.use(passport.initialize());
+app.use(passport.session());
 
 // PARA EL MANEJO DE COOKIES
-app.use(cookieParser())
+app.use(cookieParser());
 
 // Routers de FileSystem (FS)
 const FSproductsRouter = require("./dao/fileSystem/routes/FSproducts.router.js");
@@ -88,7 +89,7 @@ app.use("/api/fsproducts", FSproductsRouter);
 app.use("/api/fscarts", FScartsRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
-app.use("/api/sessions", sessionsRouter)
+app.use("/api/sessions", sessionsRouter);
 app.use("/", vistasRouter);
 
 // HANDLEBARS - inicialización
@@ -166,15 +167,15 @@ serverSocketChat.on("connection", (socket) => {
     serverSocketChat.emit("llegoMensaje", mensaje);
   });
   // PARA HACER UN USUARIO QUE SE DESCONECTÓ
-socket.on("disconnect", () => {
-  console.log(`se desconecto el cliente con id ${socket.id}`);
-  let indice = usuarios.findIndex((usuario) => usuario.id === socket.id);
-  let usuario = usuarios[indice];
-  serverSocketChat.emit("usuarioDesconectado", usuario);
-  console.log(usuario);
-  usuarios.splice(indice, 1);
-});
- 
+  socket.on("disconnect", () => {
+    console.log(`se desconecto el cliente con id ${socket.id}`);
+    let indice = usuarios.findIndex((usuario) => usuario.id === socket.id);
+    let usuario = usuarios[indice];
+    serverSocketChat.emit("usuarioDesconectado", usuario);
+    console.log(usuario);
+    usuarios.splice(indice, 1);
+  });
+
   socket.on("productoAgregado", (data) => {
     console.log(`Se ha agregado ${data.title}`);
     serverSocket.emit("productoAgregado", data);

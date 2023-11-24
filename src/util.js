@@ -3,9 +3,7 @@ const { dirname } = require("path");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const { nextTick } = require("process");
-
-//const __filename = fileURLToPath(import.meta.url);
-//const __dirname = dirname(__filename);
+const winston  = require("winston")
 
 const generaHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -65,10 +63,27 @@ const passportCallRegister = (estrategia) => {
   };
 };
 
+const logger = winston.createLogger({
+  level: "error",
+  transports: [
+    new winston.transports.Console({
+      level: "info",
+    }),
+  ],
+});
+
+console.log("Logger initialized successfully");
+
+const middlog = (req, res, next) =>{
+  req.logger=logger 
+  next ()
+}
+
 module.exports = {
   __dirname,
   generaHash,
   validaHash,
   passportCall,
-  passportCallRegister
+  passportCallRegister,
+  middlog
 };

@@ -1,12 +1,9 @@
 const Router = require("express").Router;
 const router = Router();
 const arrayProducts = require("../archivos/productos.json");
-//const productosModelo = require("../dao/DB/models/productos.modelo.js");
-//const carritosModelo = require("../dao/DB/models/carritos.modelo.js");
-//const prodModelo = require("../dao/DB/models/productos.modelo.js");
-
 const productosController = require("../controllers/productos.controller.js");
 const carritosController = require("../controllers/carritos.controller.js");
+const winston = require("winston");
 
 
 const CustomError = require("../utils/customError.js");
@@ -18,10 +15,10 @@ const dtoUsuarios = require("../dto/dtoUsuarios.js")
 // FAKER
 const fakeDataGenerator = require("../public/assets/scripts/fakeDataGenerator.js");
 
-
 const mongoose = require("mongoose");
 
 const auth = (req, res, next) => {
+
   if (req.session.usuario) {
     next();
   } else {
@@ -36,6 +33,7 @@ const auth2 = (req, res, next) => {
     next();
   }
 };
+
 
 
 const authRol = (roles) => {
@@ -54,37 +52,24 @@ const authRol = (roles) => {
     next();
   };
 };
+ 
 
-/*
-
-const authRol = (roles) => {
-  return (req, res, next) => {
-    const user = req.session.usuario;
-
-    if (!user || !roles.includes(user.role)) {
-      return res
-        .status(403)
-        .send("No tienes permisos para acceder a esta ruta");
-    }
-
-    next();
-  };
-};
-*/
-
-  
 
 router.use((req, res, next) => {
   res.locals.usuario = req.session.usuario; // Pasar el usuario a res.locals
+
   next();
 });
 
 router.get("/", auth, (req, res) => {
+
+    req.logger.error("Prueba log - nivel error");
+    req.logger.log("error", "Prueba log - nivel error");
+
   let verLogin = true;
   if (req.session.usuario) {
     verLogin = false;
   }
-
   res.status(200).render("home", {
     verLogin,
     titlePage: "Home Page de la ferretería El Tornillo",
@@ -145,6 +130,7 @@ router.get("/fsrealtimeproducts", auth, (req, res) => {
 //---------------------------------------------------------------- RUTAS PARA PRODUCTOS--------------- //
 
 router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
+  
   try {
     const productos = await productosController.listarProductos(req, res);
 
@@ -405,6 +391,7 @@ router.get("/current", (req, res) => {
 
 
 router.get("/mockingproducts", (req, res) => {
+
   // Genera 100 productos falsos
   const fakeProducts = fakeDataGenerator.generateFakeProducts(100);
   res.render("FAKERproducts", {
