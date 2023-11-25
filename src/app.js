@@ -34,8 +34,8 @@ const PORT = config.PORT;
 const app = express();
 
 // LOGGER
-const { middlog } = require("./util.js");
-app.use(middlog);
+const { middLog } = require("./util.js");
+app.use(middLog);
 
 
 app.use(express.json());

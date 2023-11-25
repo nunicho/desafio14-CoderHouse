@@ -1,0 +1,24 @@
+
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"warn","message":"Prueba log - nivel warn"}
+{"level":"info","message":"Prueba log - nivel info"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"warn","message":"Prueba log - nivel warn"}
+{"level":"info","message":"Prueba log - nivel info"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"warn","message":"Prueba log - nivel warn"}
+{"level":"info","message":"Prueba log - nivel info"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"warn","message":"Prueba log - nivel warn"}
+{"level":"info","message":"Prueba log - nivel info"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"error","message":"Prueba log - nivel error"}
+{"level":"warn","message":"Prueba log - nivel warn"}
+{"level":"info","message":"Prueba log - nivel info"}
+{"infoAdicional":"Info...","level":"info","message":"PRUEBA LOG - NIVEL INFO","timestamp":"2023-11-25T23:04:03.465Z","usuario":"ADMIN"}
+{"infoAdicional":"Info...","level":"info","message":"PRUEBA LOG - NIVEL INFO","timestamp":"2023-11-25T23:04:13.211Z","usuario":"ADMIN"}
+{"infoAdicional":"Info...","level":"info","message":"PRUEBA LOG - NIVEL INFO","timestamp":"2023-11-25T23:05:19.574Z","usuario":"ADMIN"}

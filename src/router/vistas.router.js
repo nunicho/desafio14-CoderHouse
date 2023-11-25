@@ -63,8 +63,14 @@ router.use((req, res, next) => {
 
 router.get("/", auth, (req, res) => {
 
-    req.logger.error("Prueba log - nivel error");
-    req.logger.log("error", "Prueba log - nivel error");
+    req.logger.error("Prueba log - nivel error")
+    req.logger.log("error", "Prueba log - nivel error")
+    req.logger.warn("Prueba log - nivel warn")
+    req.logger.info("Prueba log - nivel info")
+    req.logger.http("Prueba log - nivel http")
+    req.logger.verbose("Prueba log - nivel verbose")
+    req.logger.debug("Prueba log - nivel debug")
+    req.logger.silly("Prueba log - nivel silly")
 
   let verLogin = true;
   if (req.session.usuario) {
@@ -414,5 +420,15 @@ router.get("/mockingproducts/:id", (req, res) => {
   });
 });
 
+//---------------------------------------------------------------- RUTA LOGS---------------//
+
+router.post('/logs', (req, res) =>{
+  console.log(`Recibimos log via http:`, req.body)
+
+  res.setHeader('Content-type', 'application/json')
+  res.status(200).json({
+      log: req.body
+  })
+})
 
 module.exports = router;
