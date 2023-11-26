@@ -3,7 +3,10 @@ const { dirname } = require("path");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const { nextTick } = require("process");
-const winston  = require("winston")
+const winston  = require("winston");
+const config = require("./config/config.js");
+
+const entorno = config.MODO
 
 const generaHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -62,27 +65,6 @@ const passportCallRegister = (estrategia) => {
     })(req, res);
   };
 };
-/*
-const transporteHttp = new winston.transports.Http({
-      host: 'localhost', port:8080, path: '/logs',
-      level: 'info',
-      format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.json(),
-      )
-
-})
-
-const filtroInfo = winston.format((datos) => {
-  // console.log(datos)
-  if (datos.level === "info") {
-    datos.message = datos.message.toUpperCase();
-    datos.usuario = "ADMIN";
-    datos.infoAdicional = "Info...";
-    return datos;
-  }
-});
-*/
 
 const customLevels = {
     niveles: {
@@ -120,17 +102,24 @@ const logger = winston.createLogger({
   ],
 });
 
-/*
-let http = true;
-if (http) {
-  logger.add(transporteHttp);
-}
-// trabajar con var de entorno, y loguear en consola por ej, si estamos en
-// modo development
-*/
+
+const transporteConsola = new winston.transports.Console({
+  level:'debug',
+  format: winston.format.combine(
+    winston.format.colorize({
+      colors: customLevels.colores,
+    }),
+    winston.format.simple()
+  )
+})
+
+if (entorno !== "production") {
+    logger.add(transporteConsola)
+}   
 
 const middLog = (req, res, next) => {
   req.logger = logger;
+  console.log(`El entorno es ${entorno}`)
   next();
 };
 

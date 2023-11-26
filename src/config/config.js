@@ -20,6 +20,7 @@ dotenv.config({
 });
 
 
+
 const config = {
   PORT: process.env.PORT || 3000,
   MONGO_URL: process.env.MONGO_URL,
@@ -30,8 +31,12 @@ const config = {
   CLIENT_ID: process.env.CLIENT_ID,
   CLIENT_SECRECT: process.env.CLIENT_SECRECT,
   CALLBACK_URL: process.env.CALLBACK_URL,
-  SESSIONS_PASSWORD: process.env.SESSIONS_PASSWORD
+  SESSIONS_PASSWORD: process.env.SESSIONS_PASSWORD,
+  MODO:process.env.MODO
 };
+
+const modo = config.MODO
+
 
 module.exports = config
 
