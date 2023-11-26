@@ -1,60 +1,10 @@
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"error","message":"Prueba log - nivel error"}
-{"level":"warn","message":"Prueba log - nivel warn"}
+
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T00:22:45.193Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: verLogin1 is not defined","timestamp":"2023-11-26T00:22:45.195Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T00:23:29.853Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T00:23:50.806Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T00:24:00.682Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T00:24:30.851Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: BLABLABLA is not defined","timestamp":"2023-11-26T00:26:17.611Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: BLABLABLA is not defined","timestamp":"2023-11-26T03:18:19.541Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-26T03:19:23.569Z"}

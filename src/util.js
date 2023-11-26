@@ -62,7 +62,7 @@ const passportCallRegister = (estrategia) => {
     })(req, res);
   };
 };
-
+/*
 const transporteHttp = new winston.transports.Http({
       host: 'localhost', port:8080, path: '/logs',
       level: 'info',
@@ -82,15 +82,73 @@ const filtroInfo = winston.format((datos) => {
     return datos;
   }
 });
+*/
+
+const customLevels = {
+    niveles: {
+      fatal:0,
+      error:1,
+      warning:2,
+      info:3,
+      http:4,
+      debug:5
+    },
+    colores:{
+      fatal: "bold white redBG",
+      error: "bold red",
+      warning:"bold yellow",
+      info: "bold blue",
+      http:"bold magenta",
+      debug:"bold cyan"
+    }
+}
 
 const logger = winston.createLogger({
-  level: "silly",
+  levels: customLevels.niveles,
   transports: [
-    // transporteHttp,
-    new winston.transports.Console({
-      // level:'info',
-      // format: winston.format.simple(),
-      // format: winston.format.prettyPrint(),
+    new winston.transports.File({
+      filename: "./logWarnError.log",
+      level:'info',
+      format: winston.format.combine(
+        // winston.format.colorize({
+        //   colors: customLevels.colores
+        // }),
+        winston.format.timestamp(),
+        winston.format.json() 
+      )
+    })
+  ],
+});
+
+/*
+let http = true;
+if (http) {
+  logger.add(transporteHttp);
+}
+// trabajar con var de entorno, y loguear en consola por ej, si estamos en
+// modo development
+*/
+
+const middLog = (req, res, next) => {
+  req.logger = logger;
+  next();
+};
+
+module.exports = {
+  __dirname,
+  generaHash,
+  validaHash,
+  passportCall,
+  passportCallRegister,
+  middLog
+};
+
+
+/*
+const logger = winston.createLogger({
+  levels: customLevels.niveles,
+  transports: [
+  new winston.transports.Console({
       format: winston.format.combine(
         winston.format.timestamp(),
         winston.format.colorize({ colors: { error: "bold white redBG" } }),
@@ -112,24 +170,4 @@ const logger = winston.createLogger({
     }),
   ],
 });
-
-let http = true;
-if (http) {
-  logger.add(transporteHttp);
-}
-// trabajar con var de entorno, y loguear en consola por ej, si estamos en
-// modo development
-
-const middLog = (req, res, next) => {
-  req.logger = logger;
-  next();
-};
-
-module.exports = {
-  __dirname,
-  generaHash,
-  validaHash,
-  passportCall,
-  passportCallRegister,
-  middLog
-};
+*/

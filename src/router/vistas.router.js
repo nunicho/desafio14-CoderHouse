@@ -62,25 +62,33 @@ router.use((req, res, next) => {
 });
 
 router.get("/", auth, (req, res) => {
-
-    req.logger.error("Prueba log - nivel error")
-    req.logger.log("error", "Prueba log - nivel error")
-    req.logger.warn("Prueba log - nivel warn")
-    req.logger.info("Prueba log - nivel info")
-    req.logger.http("Prueba log - nivel http")
-    req.logger.verbose("Prueba log - nivel verbose")
-    req.logger.debug("Prueba log - nivel debug")
-    req.logger.silly("Prueba log - nivel silly")
-
-  let verLogin = true;
+let verLogin
+ try {
+  
   if (req.session.usuario) {
-    verLogin = false;
+  verLogin = false;
   }
+  req.logger.info(`Login exitoso`);
   res.status(200).render("home", {
     verLogin,
     titlePage: "Home Page de la ferretería El Tornillo",
     estilo: "styles.css",
   });
+ 
+} catch (error) {
+  req.logger.error(`Error al abrir el login - Detalle: ${error.message}`);
+}
+    // req.logger.error("Prueba log - nivel error")
+    // req.logger.log("error", "Prueba log - nivel error")
+    // req.logger.warn("Prueba log - nivel warn")
+    // req.logger.info("Prueba log - nivel info")
+    // req.logger.http("Prueba log - nivel http")
+    // req.logger.verbose("Prueba log - nivel verbose")
+    // req.logger.debug("Prueba log - nivel debug")
+    // req.logger.silly("Prueba log - nivel silly")
+
+
+
 });
 
 //---------------------------------------------------------------- RUTAS EN FILESYSTEM --------------- //
@@ -139,7 +147,6 @@ router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
   
   try {
     const productos = await productosController.listarProductos(req, res);
-
     res.header("Content-type", "text/html");
     res.status(200).render("DBproducts", {
       productos: productos.docs,
@@ -432,3 +439,34 @@ router.post('/logs', (req, res) =>{
 })
 
 module.exports = router;
+
+
+/*
+router.get("/", auth, (req, res) => {
+
+
+ try {
+  
+} catch (error) {
+  
+}
+    // req.logger.error("Prueba log - nivel error")
+    // req.logger.log("error", "Prueba log - nivel error")
+    // req.logger.warn("Prueba log - nivel warn")
+    // req.logger.info("Prueba log - nivel info")
+    // req.logger.http("Prueba log - nivel http")
+    // req.logger.verbose("Prueba log - nivel verbose")
+    // req.logger.debug("Prueba log - nivel debug")
+    // req.logger.silly("Prueba log - nivel silly")
+
+  let verLogin = true;
+  if (req.session.usuario) {
+    verLogin = false;
+  }
+  res.status(200).render("home", {
+    verLogin,
+    titlePage: "Home Page de la ferretería El Tornillo",
+    estilo: "styles.css",
+  });
+});
+*/
