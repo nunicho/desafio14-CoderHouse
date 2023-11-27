@@ -312,19 +312,26 @@ router
   .post(async (req, res, next) => {
     try {
       await productosController.editarProducto(req, res, next);
-  
+
       const { redireccionar, productoEditado, error } = res.locals;
 
       if (redireccionar) {
+        req.logger.info(
+          `Producto de nombre ${productoEditado.title} editado correctamente`
+        );
         res.redirect("/DBProducts-Admin");
       } else {
-       if (error) {
-          console.error("Error al editar producto:", error);
+        if (error) {
+         req.logger.error(
+            `Error al editar producto de nombre ${productoEditado.title}`
+          );
           res.status(error.codigo).send(error.detalle);
         }
       }
     } catch (error) {
-      console.error("Error al editar producto:", error);
+       req.logger.error(
+        `Error al editar producto`
+      );
       res.status(500).send("Error interno del servidor");
     }
   });
@@ -349,6 +356,8 @@ router.get(
         );
         }
 
+
+  req.logger.info(`Carrito de id ${carritoDB._id} encontrado exitosamente`);
     res.header("Content-type", "text/html");
     res.status(200).render("DBcartDetails", {
       carritoDB,
