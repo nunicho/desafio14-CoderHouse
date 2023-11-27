@@ -127,3 +127,8 @@
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-27T19:11:21.946Z"}
 {"level":"info","message":"Carrito encontrado exitosamente de id 6564e9d143a51021e8234707","timestamp":"2023-11-27T19:11:25.809Z"}
 {"level":"info","message":"Carrito de id 6564e9d143a51021e8234707 encontrado exitosamente","timestamp":"2023-11-27T19:12:08.466Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T22:13:20.314Z"}
+{"level":"info","message":"Ingreso al chat exitoso - Usuario mauricio@gmail.com","timestamp":"2023-11-27T22:13:22.759Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T22:14:08.046Z"}
+{"level":"error","message":"Error al ingresar al chat - Detalle: pepito is not defined","timestamp":"2023-11-27T22:14:10.224Z"}
+{"level":"info","message":"Ingreso al chat exitoso - Usuario mauricio@gmail.com","timestamp":"2023-11-27T22:14:35.857Z"}

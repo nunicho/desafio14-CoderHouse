@@ -348,6 +348,7 @@ router.get(
     const carritoDB = res.locals.carritoDB;
 
     if (!carritoDB) {
+      req.logger.error(`Carrito no encontrado - Detalle: ${error.message}`);
         throw new CustomError(
           "ERROR_DATOS",
           "Carrito no encontrado",
@@ -370,11 +371,19 @@ router.get(
 //---------------------------------------------------------------- RUTAS PARA EL CHAT --------------- //
 
 router.get("/chat", auth, authRol(["user"]), (req, res) => {
-  res.setHeader("Content-type", "text/html");
-  res.status(200).render("chat", {
-    estilo: "chat.css",
-    usuario: req.session.usuario,
-  });
+  try {
+    req.logger.info(
+      `Ingreso al chat exitoso - Usuario ${req.session.usuario.email}`
+    );
+    res.setHeader("Content-type", "text/html");
+    res.status(200).render("chat", {
+      estilo: "chat.css",
+      usuario: req.session.usuario,
+    });
+  } catch (error) {
+    req.logger.error(`Error al ingresar al chat - Detalle: ${error.message}`);
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 //---------------------------------------------------------------- RUTAS PARA EL USERS ---------------//
