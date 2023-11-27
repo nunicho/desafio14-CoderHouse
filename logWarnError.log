@@ -18,3 +18,9 @@
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-26T05:13:21.114Z"}
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-26T05:17:51.936Z"}
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-26T05:19:48.565Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:17:13.645Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: dasd is not defined","timestamp":"2023-11-27T03:18:32.485Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:19:23.198Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:19:24.175Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:20:06.726Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:20:31.684Z"}

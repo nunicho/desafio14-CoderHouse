@@ -90,15 +90,23 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.File({
       filename: "./logWarnError.log",
-      level:'info',
+      level: "info",
       format: winston.format.combine(
         // winston.format.colorize({
         //   colors: customLevels.colores
         // }),
         winston.format.timestamp(),
-        winston.format.json() 
-      )
-    })
+        winston.format.json()
+      ),
+    }),
+    new winston.transports.File({
+      filename: "./errors.log",
+      level: "error",
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
+      ),
+    }),
   ],
 });
 
