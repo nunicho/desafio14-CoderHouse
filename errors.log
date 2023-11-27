@@ -15,3 +15,5 @@
 {"level":"fatal","message":"Error al acceder a la página de administrador - Detalle: cacheuta is not defined","timestamp":"2023-11-27T22:38:45.953Z"}
 {"level":"error","message":"Error al acceder a la ruta de productos simulados - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:12.299Z"}
 {"level":"error","message":"Error al acceder a la ruta de detalles del producto simulado - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:40.638Z"}
+{"level":"error","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:51:49.036Z"}
+{"level":"fatal","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:52:10.320Z"}

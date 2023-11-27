@@ -157,3 +157,9 @@
 {"level":"error","message":"Error al acceder a la ruta de productos simulados - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:12.297Z"}
 {"level":"info","message":"Acceso exitoso a la ruta de productos simulados","timestamp":"2023-11-27T22:42:36.920Z"}
 {"level":"error","message":"Error al acceder a la ruta de detalles del producto simulado - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:40.638Z"}
+{"level":"info","message":"Acceso exitoso a la ruta de detalles del producto simulado","timestamp":"2023-11-27T22:46:09.909Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T22:50:01.580Z"}
+{"level":"info","message":"Acceso exitoso a la ruta de crear carrito","timestamp":"2023-11-27T22:50:18.527Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T22:51:20.893Z"}
+{"level":"error","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:51:49.035Z"}
+{"level":"fatal","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:52:10.318Z"}
