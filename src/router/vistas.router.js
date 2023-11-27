@@ -389,66 +389,101 @@ router.get("/chat", auth, authRol(["user"]), (req, res) => {
 //---------------------------------------------------------------- RUTAS PARA EL USERS ---------------//
 
 router.get("/registro", auth2, (req, res) => {
-  let error = false;
-  let errorDetalle = "";
-  if (req.query.error) {
-    error = true;
-    errorDetalle = req.query.error;
-  }
+  try {
+    let error = false;
+    let errorDetalle = "";
+    if (req.query.error) {
+      error = true;
+      errorDetalle = req.query.error;
+    }
 
-  res.status(200).render("registro", {
-    verLogin: true,
-    error,
-    errorDetalle,
-    estilo: "login.css",
-  });
+    req.logger.info("Acceso a la página de registro");
+
+    res.status(200).render("registro", {
+      verLogin: true,
+      error,
+      errorDetalle,
+      estilo: "login.css",
+    });
+  } catch (error) {
+    req.logger.fatal(
+      `Error al acceder a la página de registro - Detalle: ${error.message}`
+    );
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 router.get("/login", auth2, (req, res) => {
-  let error = false;
-  let errorDetalle = "";
-  if (req.query.error) {
-    error = true;
-    errorDetalle = req.query.error;
-  }
+  try {   
+    let error = false;
+    let errorDetalle = "";
+    if (req.query.error) {
+      error = true;
+      errorDetalle = req.query.error;
+    }
 
-  let usuarioCreado = false;
-  let usuarioCreadoDetalle = "";
-  if (req.query.usuarioCreado) {
-    usuarioCreado = true;
-    usuarioCreadoDetalle = req.query.usuarioCreado;
-  }
+    let usuarioCreado = false;
+    let usuarioCreadoDetalle = "";
+    if (req.query.usuarioCreado) {
+      usuarioCreado = true;
+      usuarioCreadoDetalle = req.query.usuarioCreado;
+    }
 
-  res.status(200).render("login", {
-    verLogin: true,
-    usuarioCreado,
-    usuarioCreadoDetalle,
-    error,
-    errorDetalle,
-    estilo: "login.css",
-  });
+    req.logger.info("Acceso a la página de inicio de sesión");
+
+    res.status(200).render("login", {
+      verLogin: true,
+      usuarioCreado,
+      usuarioCreadoDetalle,
+      error,
+      errorDetalle,
+      estilo: "login.css",
+    });
+  } catch (error) {
+    req.logger.fatal(
+      `Error al acceder a la página de inicio de sesión - Detalle: ${error.message}`
+    );
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 router.get("/perfil", auth, (req, res) => {
-  res.status(200).render("perfil", {
-    verLogin: false,
-    estilo: "login.css",
-  });
+  try {
+    req.logger.info(
+      `Acceso exitoso al perfil - Usuario: ${req.session.usuario.email}`
+    );
+    res.status(200).render("perfil", {
+      verLogin: false,
+      estilo: "login.css",
+    });
+  } catch (error) {
+    req.logger.error(`Error al acceder al perfil - Detalle: ${error.message}`);
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 router.get("/loginAdmin", (req, res) => {
-  let error = false;
-  let errorDetalle = "";
-  if (req.query.error) {
-    error = true;
-    errorDetalle = req.query.error;
-  }
+  try {
+    req.logger.info(`Acceso exitoso a la página de administrador`);
 
-  res.status(200).render("loginAdmin", {
-    error,
-    errorDetalle,
-    estilo: "login.css",
-  });
+    let error = false;
+    let errorDetalle = "";
+    if (req.query.error) {
+      error = true;
+      errorDetalle = req.query.error;
+    }
+
+    res.status(200).render("loginAdmin", {
+      error,
+      errorDetalle,
+      estilo: "login.css",
+    });
+  } catch (error) {
+    req.logger.fatal(
+      `Error al acceder a la página de administrador - Detalle: ${error.message}`
+    );
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 //---------------------------------------------------------------- RUTA CURRENT ---------------//
@@ -474,27 +509,42 @@ router.get("/current", (req, res) => {
 
 
 router.get("/mockingproducts", (req, res) => {
-
-  // Genera 100 productos falsos
-  const fakeProducts = fakeDataGenerator.generateFakeProducts(100);
-  res.render("FAKERproducts", {
-    productos: fakeProducts,
-    hasProducts: fakeProducts.length > 0,
-    pageTitle: "Productos en DATABASE",
-    estilo: "productsStyles.css",
-  });
+  try {
+    req.logger.info(`Acceso exitoso a la ruta de productos simulados`);
+    const fakeProducts = fakeDataGenerator.generateFakeProducts(100);
+    res.render("FAKERproducts", {
+      productos: fakeProducts,
+      hasProducts: fakeProducts.length > 0,
+      pageTitle: "Productos en DATABASE",
+      estilo: "productsStyles.css",
+    });
+  } catch (error) {
+    req.logger.error(
+      `Error al acceder a la ruta de productos simulados - Detalle: ${error.message}`
+    );
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 router.get("/mockingproducts/:id", (req, res) => {
-  // Simula la búsqueda del producto por ID
-  const productId = req.params.id;
-  const fakeProduct = fakeDataGenerator.generateFakeProducts(1)[0]; // Genera un producto falso para simular la búsqueda
+  try {
+    req.logger.info(
+      `Acceso exitoso a la ruta de detalles del producto simulado`
+    );
+    const productId = req.params.id;
+    const fakeProduct = fakeDataGenerator.generateFakeProducts(1)[0]; 
 
-  res.render("FAKERproductsDetails", {
-    product: fakeProduct,
-    pageTitle: "Detalles del Producto",
-    estilo: "productDetailsStyles.css",
-  });
+    res.render("FAKERproductsDetails", {
+      product: fakeProduct,
+      pageTitle: "Detalles del Producto",
+      estilo: "productDetailsStyles.css",
+    });
+  } catch (error) {
+    req.logger.error(
+      `Error al acceder a la ruta de detalles del producto simulado - Detalle: ${error.message}`
+    );
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 //---------------------------------------------------------------- RUTA LOGS---------------//

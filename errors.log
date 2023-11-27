@@ -9,3 +9,9 @@
 {"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:21:45.387Z"}
 {"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:22:24.933Z"}
 {"level":"error","message":"Error al ingresar al chat - Detalle: pepito is not defined","timestamp":"2023-11-27T22:14:10.224Z"}
+{"level":"error","message":"Error al acceder a la página de registro - Detalle: pepito is not defined","timestamp":"2023-11-27T22:23:28.876Z"}
+{"level":"error","message":"Error al acceder al perfil - Detalle: pepito is not defined","timestamp":"2023-11-27T22:32:15.995Z"}
+{"level":"fatal","message":"Error al acceder a la página de inicio de sesión - Detalle: cacheuta is not defined","timestamp":"2023-11-27T22:36:39.877Z"}
+{"level":"fatal","message":"Error al acceder a la página de administrador - Detalle: cacheuta is not defined","timestamp":"2023-11-27T22:38:45.953Z"}
+{"level":"error","message":"Error al acceder a la ruta de productos simulados - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:12.299Z"}
+{"level":"error","message":"Error al acceder a la ruta de detalles del producto simulado - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:40.638Z"}
