@@ -24,3 +24,92 @@
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:19:24.175Z"}
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:20:06.726Z"}
 {"level":"info","message":"Login exitoso","timestamp":"2023-11-27T03:20:31.684Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T16:52:45.949Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T16:52:48.110Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T16:53:42.501Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T16:53:44.661Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T16:54:49.657Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: productosController.listarProductos1 is not a function","timestamp":"2023-11-27T16:55:03.483Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: productosController.listarProductos1 is not a function","timestamp":"2023-11-27T16:55:52.832Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: productos1981 is not defined","timestamp":"2023-11-27T16:57:00.862Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T17:01:25.792Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto","timestamp":"2023-11-27T17:03:30.949Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto","timestamp":"2023-11-27T17:04:34.858Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto undefined - Bomba de agua Bestway","timestamp":"2023-11-27T17:06:26.822Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto 6510f94ce2ddfc048d3b03f3 - Tender para la ropa","timestamp":"2023-11-27T17:06:48.706Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto Id: 6510f994e2ddfc048d3b03f9 - Nombre: Disco abrasivo Flap","timestamp":"2023-11-27T17:07:14.224Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T17:07:50.654Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T17:07:51.386Z"}
+{"level":"error","message":"Error al abrir detalle de producto - Detalle: productoDB1981 is not defined","timestamp":"2023-11-27T17:07:54.812Z"}
+{"level":"fatal","message":"Error al abrir detalle de producto - Detalle: productoDB1981 is not defined","timestamp":"2023-11-27T17:08:32.507Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T17:15:37.354Z"}
+{"level":"info","message":"Login exitoso","timestamp":"2023-11-27T17:17:01.107Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:17:05.387Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:17:36.850Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:19:02.812Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:20:07.418Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:20:12.144Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:20:19.841Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:21:53.987Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:19.045Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:23.720Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:31.143Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:36.240Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:45.136Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:22:49.338Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:24:23.905Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:26:18.368Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:26:49.070Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:27:02.442Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto Id: 6510faf6e2ddfc048d3b0411 - Nombre: Caja de clavos","timestamp":"2023-11-27T17:28:23.202Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:33:07.532Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:33:23.762Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:35:23.610Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:38:07.821Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:38:37.484Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:39:15.245Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:39:37.534Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:42:06.983Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:42:58.152Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:43:08.426Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:43:09.832Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:43:16.636Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:51:10.330Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:51:29.743Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:51:39.242Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:51:44.124Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:53:27.512Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:53:50.918Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:54:23.111Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:56:00.207Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:56:04.764Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T17:56:09.853Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:00:41.981Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:00:47.096Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:01:58.002Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:02:02.606Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:05:41.050Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:05:54.650Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:10:17.368Z"}
+{"level":"info","message":"Producto creado correctamente","timestamp":"2023-11-27T18:10:40.134Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:13:53.091Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:13:57.659Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto","timestamp":"2023-11-27T18:14:11.724Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:14:32.981Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:18:57.717Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:18:57.724Z"}
+{"level":"info","message":"Producto creado correctamente: Cuando pase el temblor","timestamp":"2023-11-27T18:19:15.455Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:21:26.598Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:21:45.387Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:22:06.309Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:22:24.930Z"}
+{"level":"info","message":"Producto creado correctamente - Id: undefined Nombre: hombre al agua","timestamp":"2023-11-27T18:23:29.499Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-223213232 Nombre: Un poco de amor frances","timestamp":"2023-11-27T18:25:05.875Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:42:39.583Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:42:46.438Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:42:58.604Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:45:08.998Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:45:16.199Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:45:21.037Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:47:11.832Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-11-27T18:47:26.132Z"}

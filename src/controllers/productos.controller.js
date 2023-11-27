@@ -131,6 +131,9 @@ const crearProducto = async (req, res) => {
   }
 
     const productoInsertado = await ProductosRepository.crearProducto(producto);
+
+    res.locals.nombreProducto = producto.title;
+    res.locals.codeProducto = producto.code;
     res.status(201).json({ productoInsertado });
   } catch (error)  {
     res
@@ -162,7 +165,7 @@ const borrarProducto = async (req, res, next) => {
         `El producto con ID ${id} no existe.`
       );
     }
-
+    res.locals.nombreProducto = producto.title;
     const resultado = await ProductosRepository.borrarProducto(id);
 
     res

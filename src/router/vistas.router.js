@@ -53,18 +53,15 @@ const authRol = (roles) => {
   };
 };
  
-
-
 router.use((req, res, next) => {
   res.locals.usuario = req.session.usuario; // Pasar el usuario a res.locals
-
   next();
 });
 
+
 router.get("/", auth, (req, res) => {
 let verLogin
- try {
-  
+ try { 
   if (req.session.usuario) {
   verLogin = false;
   }
@@ -78,17 +75,6 @@ let verLogin
 } catch (error) {
   req.logger.error(`Error al abrir el login - Detalle: ${error.message}`);
 }
-    // req.logger.error("Prueba log - nivel error")
-    // req.logger.log("error", "Prueba log - nivel error")
-    // req.logger.warn("Prueba log - nivel warn")
-    // req.logger.info("Prueba log - nivel info")
-    // req.logger.http("Prueba log - nivel http")
-    // req.logger.verbose("Prueba log - nivel verbose")
-    // req.logger.debug("Prueba log - nivel debug")
-    // req.logger.silly("Prueba log - nivel silly")
-
-
-
 });
 
 //---------------------------------------------------------------- RUTAS EN FILESYSTEM --------------- //
@@ -165,8 +151,10 @@ router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
       sort: req.query.sort || "",
       limit: req.query.limit || 10,
     });
+     req.logger.info(`Acceso exitoso a productos - Usuario`);
   } catch (error) {
-    res.status(500).json({ error: "Error interno del servidor" });
+    res.status(500).json({ error: "Error interno del servidor" });   
+    req.logger.error(`Error al acceder a productos - Detalle: ${error.message}`);
   }
 });
 
@@ -200,8 +188,10 @@ router.get(
         sort: req.query.sort || "",
         limit: req.query.limit || 10,
       });
+       req.logger.info(`Acceso exitoso a productos - Administrador`);
     } catch (error) {
       res.status(500).json({ error: "Error interno del servidor" });
+      req.logger.error(`Error al abrir el login - Detalle: ${error.message}`);
     }
   }
 );
@@ -212,31 +202,93 @@ router.get(
   auth,
   productosController.obtenerProducto,
   (req, res) => {
-    const productoDB = res.locals.productoDB;
-    if (!productoDB) {
-      return res.status(404).send("Producto no encontrado");
-    }
-    res.header("Content-type", "text/html");
-    res.status(200).render("DBproductsDetails", {
-      productoDB,
-      estilo: "productDetails.css",
-    });
+  try {
+        const productoDB = res.locals.productoDB;
+        if (!productoDB) {
+          return res.status(404).send("Producto no encontrado");
+        }
+        res.header("Content-type", "text/html");
+        res.status(200).render("DBproductsDetails", {
+          productoDB,
+          estilo: "productDetails.css",
+        });
+        req.logger.info(`Acceso exitoso a detalle producto Id: ${productoDB._id} - Nombre: ${productoDB.title}`);
+  } catch (error) {
+        res.status(500).json({ error: "Error interno del servidor" });
+        req.logger.error(`Error al abrir detalle de producto - Detalle: ${error.message}`);
+  }
   }
 );
 
-router.post("/DBProducts", auth, productosController.crearProducto);
+//router.post("/DBProducts", auth, productosController.crearProducto);
+
+
+
+router.post("/DBProducts", auth, async (req, res, next) => {
+  try {
+    await productosController.crearProducto(req, res, next);
+    const nombreProducto = res.locals.nombreProducto;
+    const codeProducto = res.locals.codeProducto; 
+    if (nombreProducto) {
+      req.logger.info(`Producto creado correctamente - Id: ${codeProducto} Nombre: ${nombreProducto}`);
+    } else {
+      req.logger.warn("No se pudo obtener el nombre del producto creado.");
+    }
+  } catch (error) {
+    req.logger.error("No se pudo crear correctamente el producto", error);    
+  }
+});
+
 
 // PARA AGREGAR EN OTRO MOMENTO
 //router.put("/DBproducts/:id", auth, productosController.editarProducto);
 
-router.delete("/DBproducts/:id", auth, productosController.borrarProducto, (req, res)=>{
-   res.header("Content-type", "text/html");
-    res.status(200).render("DBproductsDetails", {
-      productoDB,
-      estilo: "productDetails.css",
-    });
 
-});
+/*router.delete("/eliminarProducto/:id", auth, authRol(["administrador"]), productosController.borrarProducto)*/
+
+
+/*
+router.delete(
+  "/eliminarProducto/:id",
+  auth,
+  productosController.borrarProducto,
+  (req, res) => {
+    const { redireccionar, error } = res.locals;
+    if (redireccionar) {
+    req.logger.info(`Borrado exitoso del producto`);
+    res.redirect("/DBProducts-Admin");    
+    } else {
+      if (error) {
+         req.logger.error(
+           `Error al abrir el login - Detalle: ${error.message}`);
+        res.status(error.codigo).send(error.detalle);
+      }
+    }
+  }
+);
+*/
+
+
+router.delete(
+  "/eliminarProducto/:id",
+  auth,
+  productosController.borrarProducto,
+  (req, res) => {
+    try {
+      res.header("Content-type", "text/html");
+      const nombreProducto = res.locals.nombreProducto;
+      if (nombreProducto) {
+        req.logger.info(`Producto "${nombreProducto}" borrado exitosamente`);
+      } else {
+        req.logger.warn("No se pudo obtener el nombre del producto borrado.");
+      }
+      //res.status(200).render("DBproducts-Admin");
+    } catch (error) {
+      req.logger.error(`Error al borrar producto - Detalle: ${error.message}`);
+    }
+  }
+);
+
 
 router
   .route("/editarProducto/:id")
@@ -440,33 +492,3 @@ router.post('/logs', (req, res) =>{
 
 module.exports = router;
 
-
-/*
-router.get("/", auth, (req, res) => {
-
-
- try {
-  
-} catch (error) {
-  
-}
-    // req.logger.error("Prueba log - nivel error")
-    // req.logger.log("error", "Prueba log - nivel error")
-    // req.logger.warn("Prueba log - nivel warn")
-    // req.logger.info("Prueba log - nivel info")
-    // req.logger.http("Prueba log - nivel http")
-    // req.logger.verbose("Prueba log - nivel verbose")
-    // req.logger.debug("Prueba log - nivel debug")
-    // req.logger.silly("Prueba log - nivel silly")
-
-  let verLogin = true;
-  if (req.session.usuario) {
-    verLogin = false;
-  }
-  res.status(200).render("home", {
-    verLogin,
-    titlePage: "Home Page de la ferretería El Tornillo",
-    estilo: "styles.css",
-  });
-});
-*/

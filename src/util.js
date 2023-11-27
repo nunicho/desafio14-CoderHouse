@@ -127,7 +127,6 @@ if (entorno !== "production") {
 
 const middLog = (req, res, next) => {
   req.logger = logger;
-  console.log(`El entorno es ${entorno}`)
   next();
 };
 
