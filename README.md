@@ -22,7 +22,7 @@ N° 14
 
 ## 5. CONSIGNA DESAFIO ENTREGABLE: 
 
-Se aplicará un módulo de mocking y un manejador de errores a tu servidor actual.
+Se aplicará un  módulo de mocking y un manejador de errores a tu servidor actual.
 
 
 ## 6. Usuario Administrador:
