@@ -44,3 +44,14 @@
 {"level":"info","message":"Acceso exitoso al perfil - Usuario: nunicho@yahoo.com.ar","timestamp":"2023-11-28T23:23:23.119Z"}
 {"level":"info","message":"Logout exitoso - Mail: nunicho@yahoo.com.ar ","timestamp":"2023-11-28T23:23:25.848Z"}
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:23:26.039Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:26:37.659Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T23:26:47.673Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-11-28T23:26:52.243Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:26:52.447Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T23:26:58.704Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-11-28T23:27:20.705Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: adminCoderPrueba@coder.com","timestamp":"2023-11-28T23:27:23.948Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-11-28T23:27:28.328Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:27:28.538Z"}
+{"level":"info","message":"Logout exitoso - Mail: nunicho@yahoo.com.ar ","timestamp":"2023-11-28T23:27:44.733Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:27:44.939Z"}
