@@ -564,9 +564,9 @@ router.get("/loggerTest", (req, res) => {
 
   res.render("loggerTest", {
     logFilePath,
-    logs, // Agrega tus logs aquí
-    environment, // Pasamos el modo a la plantilla
-    logFileName, // Pasamos el nombre del archivo log a la plantilla
+    logs, 
+    environment, 
+    logFileName, 
   });
   } catch (error) {
     console.error(`Error al leer el archivo ${logFilePath}: ${error.message}`);
