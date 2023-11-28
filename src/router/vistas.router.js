@@ -4,6 +4,8 @@ const arrayProducts = require("../archivos/productos.json");
 const productosController = require("../controllers/productos.controller.js");
 const carritosController = require("../controllers/carritos.controller.js");
 const winston = require("winston");
+const path = require("path");
+const fs = require("fs");
 
 
 const CustomError = require("../utils/customError.js");
@@ -238,35 +240,6 @@ router.post("/DBProducts", auth, async (req, res, next) => {
     req.logger.error("No se pudo crear correctamente el producto", error);    
   }
 });
-
-
-// PARA AGREGAR EN OTRO MOMENTO
-//router.put("/DBproducts/:id", auth, productosController.editarProducto);
-
-
-/*router.delete("/eliminarProducto/:id", auth, authRol(["administrador"]), productosController.borrarProducto)*/
-
-
-/*
-router.delete(
-  "/eliminarProducto/:id",
-  auth,
-  productosController.borrarProducto,
-  (req, res) => {
-    const { redireccionar, error } = res.locals;
-    if (redireccionar) {
-    req.logger.info(`Borrado exitoso del producto`);
-    res.redirect("/DBProducts-Admin");    
-    } else {
-      if (error) {
-         req.logger.error(
-           `Error al abrir el login - Detalle: ${error.message}`);
-        res.status(error.codigo).send(error.detalle);
-      }
-    }
-  }
-);
-*/
 
 
 router.delete(
@@ -558,5 +531,56 @@ router.post('/logs', (req, res) =>{
   })
 })
 
+const config = require("../config/config.js");
+
+
+
+router.get("/loggerTest", (req, res) => {
+  const environment = config.MODO;
+  const logFileName =
+    environment === "production" ? "error.log" : "logWarnError.log";
+  const logFilePath = path.join(__dirname, "..", "..", logFileName);
+
+  try {
+    // Lee el contenido del archivo de manera síncrona
+    const fileContent = fs.readFileSync(logFilePath, "utf-8");
+    const lines = fileContent.split("\n").filter(Boolean);
+
+    const logs = [];
+
+    lines.forEach((line) => {
+      if (line.trim().length > 0) {
+        try {
+          const log = JSON.parse(line);
+          logs.push(log);
+        } catch (parseError) {
+          console.error(
+            `Error al parsear línea en ${logFilePath}: ${parseError.message}`
+          );
+        }
+      }
+    });
+
+    res.render("loggerTest", { logFilePath, logs });
+  } catch (error) {
+    console.error(`Error al leer el archivo ${logFilePath}: ${error.message}`);
+    res.render("loggerTest", {
+      logFilePath: "Error al leer el archivo",
+      logs: [],
+    });
+  }
+});
+
+
+/*
+router.get("/loggerTest", (req, res) => {
+  const environment = config.MODO;
+
+  const logFileName =
+    environment === "production" ? "error.log" : "logWarnError.log";
+  const logFilePath = path.join(__dirname, "..", "..", logFileName);
+  res.render("loggerTest", { logFilePath });
+});
+*/
 module.exports = router;
 
