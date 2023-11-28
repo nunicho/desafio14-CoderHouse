@@ -17,3 +17,8 @@
 {"level":"error","message":"Error al acceder a la ruta de detalles del producto simulado - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:40.638Z"}
 {"level":"error","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:51:49.036Z"}
 {"level":"fatal","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:52:10.320Z"}
+{"level":"error","message":"Error al manejar la ruta de login - Detalle: prueba is not defined","timestamp":"2023-11-28T00:17:10.209Z"}
+{"level":"error","message":"Error al destruir la sesión - Detalle: Cannot read properties of undefined (reading 'usuario')","timestamp":"2023-11-28T00:19:33.486Z"}
+{"level":"error","message":"Error al manejar la ruta de logout - Detalle: Cannot read properties of undefined (reading 'email')","timestamp":"2023-11-28T00:23:14.945Z"}
+{"level":"error","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:37:51.966Z"}
+{"level":"fatal","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:38:34.727Z"}

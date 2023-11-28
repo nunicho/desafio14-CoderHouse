@@ -163,3 +163,38 @@
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-27T22:51:20.893Z"}
 {"level":"error","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:51:49.035Z"}
 {"level":"fatal","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:52:10.318Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:00:30.551Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-11-28T00:00:38.616Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:01:06.196Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-11-28T00:01:50.514Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:02:11.667Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-11-28T00:03:18.059Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:03:50.803Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: undefined","timestamp":"2023-11-28T00:13:20.627Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:14:35.036Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T00:14:43.815Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:17:04.995Z"}
+{"level":"error","message":"Error al manejar la ruta de login - Detalle: prueba is not defined","timestamp":"2023-11-28T00:17:10.209Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T00:19:11.677Z"}
+{"level":"error","message":"Error al destruir la sesión - Detalle: Cannot read properties of undefined (reading 'usuario')","timestamp":"2023-11-28T00:19:33.485Z"}
+{"level":"error","message":"Error al manejar la ruta de logout - Detalle: Cannot read properties of undefined (reading 'email')","timestamp":"2023-11-28T00:23:14.940Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:23:19.326Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T00:23:24.865Z"}
+{"level":"info","message":"Logout exitoso - Usuario: mauricio@gmail.com ","timestamp":"2023-11-28T00:23:28.619Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:23:28.843Z"}
+{"level":"info","message":"Logout exitoso - Usuario: nunicho@yahoo.com.ar ","timestamp":"2023-11-28T00:31:50.409Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:31:50.627Z"}
+{"level":"info","message":"Logout exitoso - Usuario: nunicho@yahoo.com.ar ","timestamp":"2023-11-28T00:33:08.378Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:33:08.661Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:33:15.785Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T00:34:38.970Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Usuario: adminCoderPrueba@coder.com","timestamp":"2023-11-28T00:34:48.342Z"}
+{"level":"info","message":"Logout exitoso - Usuario: adminCoderPrueba@coder.com ","timestamp":"2023-11-28T00:35:04.700Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:35:04.911Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T00:36:22.271Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-11-28T00:36:38.095Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-11-28T00:36:54.688Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T00:36:54.898Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T00:37:37.742Z"}
+{"level":"error","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:37:51.965Z"}
+{"level":"fatal","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:38:34.725Z"}

@@ -65,7 +65,7 @@ let verLogin
   if (req.session.usuario) {
   verLogin = false;
   }
-  req.logger.info(`Login exitoso`);
+ //req.logger.info(`Login exitoso`);
   res.status(200).render("home", {
     verLogin,
     titlePage: "Home Page de la ferretería El Tornillo",
