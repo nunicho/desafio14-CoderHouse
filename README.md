@@ -14,7 +14,7 @@ Mauricio Javier ALONSO
 
 ## 3. TITULO DESAFIO ENTREGABLE: 
 
-Mocking  y manejo de errores
+Implementación de logger
 
 ## 4. N° DESAFIO ENTREGABLE: 
 
