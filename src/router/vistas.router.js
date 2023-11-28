@@ -541,7 +541,6 @@ router.get("/loggerTest", (req, res) => {
   const logFilePath = path.join(__dirname, "..", "..", logFileName);
 
   try {
-    // Lee el contenido del archivo de manera síncrona
     const fileContent = fs.readFileSync(logFilePath, "utf-8");
     const lines = fileContent.split("\n").filter(Boolean);
 
@@ -576,46 +575,5 @@ router.get("/loggerTest", (req, res) => {
 });
 
 
-/*
-router.get("/loggerTest", (req, res) => {
-  const environment = config.MODO;
-  const logFileName =
-    environment === "production" ? "errors.log" : "logWarnError.log";
-  const logFilePath = path.join(__dirname, "..", "..", logFileName);
-
-  try {
-    // Lee el contenido del archivo de manera síncrona
-    const fileContent = fs.readFileSync(logFilePath, "utf-8");
-    const lines = fileContent.split("\n").filter(Boolean);
-
-    const logs = [];
-
-    lines.forEach((line) => {
-      if (line.trim().length > 0) {
-        try {
-          const log = JSON.parse(line);
-          logs.push(log);
-        } catch (parseError) {
-          console.error(
-            `Error al parsear línea en ${logFilePath}: ${parseError.message}`
-          );
-        }
-      }
-    });
-
-    res.render("loggerTest", {
-      logFilePath,
-      logs,
-      stylesheet: "/loggerTest.css",
-    });
-  } catch (error) {
-    console.error(`Error al leer el archivo ${logFilePath}: ${error.message}`);
-    res.render("loggerTest", {
-      logFilePath: "Error al leer el archivo",
-      logs: [],
-    });
-  }
-});
-*/
 module.exports = router;
 

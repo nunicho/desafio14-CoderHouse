@@ -16,3 +16,31 @@
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T03:13:28.093Z"}
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T03:14:38.692Z"}
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T03:47:33.073Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:18:41.052Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T23:18:46.491Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-11-28T23:18:49.223Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-28T23:18:55.393Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto Id: 65160d3c2d9e25f3e602ed3e - Nombre: Taladro Atornillador MAX","timestamp":"2023-11-28T23:18:57.669Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-11-28T23:19:05.081Z"}
+{"level":"info","message":"Acceso exitoso a la ruta de crear carrito","timestamp":"2023-11-28T23:19:10.131Z"}
+{"level":"info","message":"Ingreso al chat exitoso - Usuario mauricio@gmail.com","timestamp":"2023-11-28T23:19:18.749Z"}
+{"level":"info","message":"Acceso exitoso a la ruta de productos simulados","timestamp":"2023-11-28T23:20:56.097Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-11-28T23:21:41.164Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:21:41.358Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-11-28T23:21:43.390Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:22:09.807Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: ayuoki@gmail.com","timestamp":"2023-11-28T23:22:16.733Z"}
+{"level":"info","message":"Logout exitoso - Mail: ayuoki@gmail.com ","timestamp":"2023-11-28T23:22:19.409Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:22:19.599Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-11-28T23:22:21.370Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:22:36.485Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T23:22:38.301Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoder@coder.com","timestamp":"2023-11-28T23:22:47.018Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: adminCoder@coder.com","timestamp":"2023-11-28T23:22:51.183Z"}
+{"level":"error","message":"Faltan datos en la solicitud","timestamp":"2023-11-28T23:23:06.758Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-11-28T23:23:06.961Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoder@coder.com ","timestamp":"2023-11-28T23:23:13.008Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:23:13.200Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: nunicho@yahoo.com.ar","timestamp":"2023-11-28T23:23:23.119Z"}
+{"level":"info","message":"Logout exitoso - Mail: nunicho@yahoo.com.ar ","timestamp":"2023-11-28T23:23:25.848Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-11-28T23:23:26.039Z"}

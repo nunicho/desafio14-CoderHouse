@@ -61,7 +61,7 @@ Para users y productos.
 ## 12. Se implementó un ticket con la compra
 
 ## 13. Se implementó una ruta para FAKER.JS
-La ruta es /mokingProducts
+La ruta es /mockingproducts
 
 ## 14. Se implementó una ruta para Logger
 La ruta es /loggerTest
