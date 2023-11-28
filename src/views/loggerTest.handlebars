@@ -1,6 +1,9 @@
-
+<head>
+  <link rel="stylesheet" type="text/css" href="{{stylesheet}}">
+</head>
 <body>
-  <h1>Logger Test</h1>
+  <h1>Logger Test - Modo {{environment}}</h1>
+  <h2>Archivo log cargado: {{logFileName}}</h2>
   <p>Contenido del archivo de log:</p>
   {{#each logs}}
     <pre>
