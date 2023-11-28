@@ -16,8 +16,7 @@ eliminarBotones.forEach((enlace) => {
           // Manejar errores de eliminación si es necesario
         }
       })
-      .catch((error) => {   
-        console.error("Error al eliminar el producto:", error);
+      .catch((error) => {         
       });
   });
 });

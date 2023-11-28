@@ -47,8 +47,7 @@ const generateAndAddFakeProducts = async (req, res) => {
     res
       .status(200)
       .json({ message: "Productos falsos generados y agregados con éxito." });
-  } catch (error) {
-    console.error(error);
+  } catch (error) {  
     res.status(500).json({ error: "Error interno del servidor" });
   }
 };

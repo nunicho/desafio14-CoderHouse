@@ -97,13 +97,11 @@ router.put("/:id", async (req, res) => {
       .json({ error: `Ya existe otro producto con code ${modifica.code}` });
 
   let existe = await productosModelo.findById(id);
-  console.log(existe);
+  
 
   if (!existe)
     return res.status(404).json({ error: `Producto con id ${id} inexistente` });
   let resultado = await productosModelo.updateOne({ _id: id }, modifica);
-
-  console.log(resultado);
 
   res.status(200).json({ resultado });
 });

@@ -15,7 +15,7 @@ const errorHandler = require("./middleware/errorHandler.js");
 
 // DOTENV
 const config = require("./config/config.js");
-//console.log(config.DB_NAME)
+
 
 //SESSION
 const session = require("express-session");
@@ -158,10 +158,8 @@ let usuarios = [];
 const serverSocketChat = socketIO(serverExpress);
 
 serverSocketChat.on("connection", (socket) => {
-  console.log(`Se ha conectado un cliente con id ${socket.id}`);
 
-  socket.on("id", (nombre) => {
-    console.log(nombre);
+  socket.on("id", (nombre) => {   
 
     usuarios.push({
       id: socket.id,
@@ -178,8 +176,7 @@ serverSocketChat.on("connection", (socket) => {
       message: mensaje.mensaje,
     });
 
-    newMessage.save().then(() => {
-      console.log("Mensaje guardado en MongoDB");
+    newMessage.save().then(() => {     
     });
 
     mensajes.push(mensaje);
@@ -187,16 +184,13 @@ serverSocketChat.on("connection", (socket) => {
   });
   // PARA HACER UN USUARIO QUE SE DESCONECTÓ
   socket.on("disconnect", () => {
-    console.log(`se desconecto el cliente con id ${socket.id}`);
     let indice = usuarios.findIndex((usuario) => usuario.id === socket.id);
     let usuario = usuarios[indice];
-    serverSocketChat.emit("usuarioDesconectado", usuario);
-    console.log(usuario);
+    serverSocketChat.emit("usuarioDesconectado", usuario);    
     usuarios.splice(indice, 1);
   });
 
-  socket.on("productoAgregado", (data) => {
-    console.log(`Se ha agregado ${data.title}`);
+  socket.on("productoAgregado", (data) => {   
     serverSocket.emit("productoAgregado", data);
   });
 

@@ -88,8 +88,6 @@ const inicializaPassport = () => {
             });
           }
 
-          console.log(username);
-
           let usuario = await usersController.getUserByEmail(username);
           if (!usuario) {
             return done(null, false, {
@@ -130,8 +128,7 @@ const inicializaPassport = () => {
       },
       async (token, tokenRefresh, profile, done) => {
         try {
-          console.log(profile);
-          let usuario = await modeloUsuariosGithub.findOne({
+            let usuario = await modeloUsuariosGithub.findOne({
             email: profile._json.email,
           });
           if (!usuario) {

@@ -48,8 +48,7 @@ router.post(
 
 
 router.post("/login", util.passportCall("loginLocal"), (req, res) => {
-  try {    
-    console.log("Llegué a la ruta de login");
+  try {       
     if (req.user) {
       req.session.usuario = req.user;
       req.logger.info(
@@ -121,8 +120,7 @@ router.get(
   passport.authenticate("loginGithub", {
     failureRedirect: "/api/sessions/errorGithub",
   }),
-  (req, res) => {
-    console.log(req.user);
+  (req, res) => {    
     req.session.usuario = req.user;
     res.redirect("/");
   }

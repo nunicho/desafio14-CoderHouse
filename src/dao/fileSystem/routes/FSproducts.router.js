@@ -90,8 +90,7 @@ router.post("/", async (req, res) => {
         "utf8"
       );
       res.status(201).json({ nuevoProducto });
-    } catch (error) {
-      console.error("Error al escribir en el archivo:", error);
+    } catch (error) {     
       res.status(500).json({ error: "Error al escribir en el archivo" });
     }
   } else {
@@ -123,16 +122,14 @@ router.put("/:id", (req, res) => {
 
   if (itemIndex !== -1) {
     if (title && description && price && thumbnail && code && stock) {
-      let codeAControlar = code;
-      console.log("El code a controlar es: " + codeAControlar);
+      let codeAControlar = code;  
       let itemsFiltrados = items.filter(
         (producto) => producto.id !== idProducto
       );
       let checkCode = itemsFiltrados.findIndex(
         (producto) => producto.code === codeAControlar
       );
-      if (checkCode !== -1) {
-        console.log(`El CODE ${code} ya está siendo usado...!!!`);
+      if (checkCode !== -1) {     
         return res.status(400).json({
           error: `El CODE ${code} ya está siendo usado`,
         });
@@ -145,13 +142,11 @@ router.put("/:id", (req, res) => {
       items[itemIndex].stock = newStock;
 
       fs.writeFile(ruta, JSON.stringify(items, null, 2), "utf8", (err) => {
-        if (err) {
-          console.error("Error al escribir en el archivo:", err);
+        if (err) {        
           return res.status(500).json({
             error: "Error al escribir en el archivo",
           });
-        } else {
-          console.log("Elemento editado exitosamente.");
+        } else {          
           res.status(200).json({ productoModificado: items[itemIndex] });
         }
       });
@@ -161,7 +156,6 @@ router.put("/:id", (req, res) => {
       });
     }
   } else {
-    console.log("Elemento no encontrado.");
     return res.status(404).json({
       error: "Elemento no encontrado",
     });

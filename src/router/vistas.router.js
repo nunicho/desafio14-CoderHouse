@@ -524,8 +524,6 @@ router.get("/mockingproducts/:id", (req, res) => {
 //---------------------------------------------------------------- RUTA LOGS---------------//
 
 router.post('/logs', (req, res) =>{
-  console.log(`Recibimos log via http:`, req.body)
-
   res.setHeader('Content-type', 'application/json')
   res.status(200).json({
       log: req.body
