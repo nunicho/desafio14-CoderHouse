@@ -6,6 +6,7 @@ const carritosController = require("../controllers/carritos.controller.js");
 const winston = require("winston");
 const path = require("path");
 const fs = require("fs");
+const config = require("../config/config.js");
 
 
 const CustomError = require("../utils/customError.js");
@@ -531,14 +532,14 @@ router.post('/logs', (req, res) =>{
   })
 })
 
-const config = require("../config/config.js");
+
 
 
 
 router.get("/loggerTest", (req, res) => {
   const environment = config.MODO;
   const logFileName =
-    environment === "production" ? "error.log" : "logWarnError.log";
+    environment === "production" ? "errors.log" : "logWarnError.log";
   const logFilePath = path.join(__dirname, "..", "..", logFileName);
 
   try {
